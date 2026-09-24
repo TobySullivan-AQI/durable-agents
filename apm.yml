@@ -1,0 +1,14 @@
+name: durable-agents
+version: 0.0.1
+description: APM project for durable-agents
+author: Toby Sullivan
+# Which agent platforms to deploy to (uncomment to pin):
+# targets:
+#   - copilot
+#   - claude
+
+dependencies:
+  apm: []
+  mcp: []
+includes: auto
+scripts: {}

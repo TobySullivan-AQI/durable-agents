@@ -29,6 +29,8 @@ neither writes files — before committing.
 3. Keep `apm.yml` metadata (`name`, `version`, `description`, `repository`,
    `keywords`, `type`) accurate — it's what shows up for downstream
    consumers and in `plugin.json` if this is ever packed.
-4. Increment the package version number, following SemVer. Respect conventions
-   for pre-release (v0) version. Never move up a version level (0.0.x -> 0.1.0,
-   or 0.x.y -> 1.0.0) unless explicitly instructed to do so.
+4. Increment the package version number only when package contents change:
+   a change under `.apm/` or to `apm.yml` itself. Documentation-only changes
+   (such as `README.md` or `AGENTS.md`) do not need a version bump. Follow SemVer
+   and respect conventions for pre-release (v0) version. Never move up a version
+   level (0.0.x -> 0.1.0, or 0.x.y -> 1.0.0) unless explicitly instructed to do so.

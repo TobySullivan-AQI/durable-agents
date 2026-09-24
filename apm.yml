@@ -1,14 +1,18 @@
 name: durable-agents
 version: 0.0.1
-description: APM project for durable-agents
+description: Durable-agent identity instruction - persist knowledge, practices, and work in-repo across sessions
 author: Toby Sullivan
-# Which agent platforms to deploy to (uncomment to pin):
+repository: https://github.com/TobySullivan-AQI/durable-agents
+keywords: [durable-agent, instructions, persistence, identity]
+
+# Content type: this package only ships instructions.
+type: instructions
+
+# Which agent platforms to deploy to (uncomment to pin; left open so any
+# consumer harness can install):
 # targets:
 #   - copilot
 #   - claude
 
-dependencies:
-  apm: []
-  mcp: []
+# "auto" publishes the full .apm/ source tree as the pack source.
 includes: auto
-scripts: {}

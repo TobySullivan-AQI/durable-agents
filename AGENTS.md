@@ -1,21 +1,5 @@
-# AGENTS.md — maintaining this package
-
-This file is hand-authored for agents (and humans) who maintain this repo.
-It is **not** the compiled consumer output that `apm compile`/`apm install`
-would normally generate — see "Do not compile" below.
-
-## What this repo is
-
 `durable-agents` is an APM producer package (single-plugin shape, per the
-[APM producer docs](https://microsoft.github.io/apm/producer/)). Its
-capability is the "durable agent" identity instruction: an always-on
-instruction telling any agent that installs this package to persist its
-knowledge, practices, and working state as files committed to its own repo,
-rather than losing them at the end of a session.
-
-The published primitive lives at
-[`.apm/instructions/durable-agent.instructions.md`](.apm/instructions/durable-agent.instructions.md).
-That file is the source of truth — edit it, not any generated output.
+[APM producer docs](https://microsoft.github.io/apm/producer/)).
 
 ## How consumers use this package
 
@@ -39,12 +23,12 @@ neither writes files — before committing.
 
 ## Making changes
 
-1. Add or edit primitives under `.apm/<type>/` (currently just
-   `.apm/instructions/`).
+1. Add or edit primitives under `.apm/<type>/`
 2. Run `apm compile --validate` to confirm the manifest and primitives are
    well-formed.
 3. Keep `apm.yml` metadata (`name`, `version`, `description`, `repository`,
    `keywords`, `type`) accurate — it's what shows up for downstream
    consumers and in `plugin.json` if this is ever packed.
-4. Commit and push directly to the current branch (including `main`)
-   unless told otherwise.
+4. Increment the package version number, following SemVer. Respect conventions
+   for pre-release (v0) version. Never move up a version level (0.0.x -> 0.1.0,
+   or 0.x.y -> 1.0.0) unless explicitly instructed to do so.

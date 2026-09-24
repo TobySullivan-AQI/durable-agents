@@ -1,5 +1,5 @@
 name: durable-agents
-version: 0.0.1
+version: 0.0.2
 description: Durable-agent identity instruction - persist knowledge, practices, and work in-repo across sessions
 author: Toby Sullivan
 repository: https://github.com/TobySullivan-AQI/durable-agents

@@ -1,11 +1,10 @@
 name: durable-agents
 version: 0.0.3
-description: Durable-agent identity instruction - persist knowledge, practices, work, status, and decisions in-repo across sessions - plus a skill for editing APM-managed root context
+description: Durable-agent identity instruction - persist knowledge, practices, work, status, and decisions in-repo across sessions
 author: Toby Sullivan
 repository: https://github.com/TobySullivan-AQI/durable-agents
-keywords: [durable-agent, instructions, skills, persistence, identity]
+keywords: [durable-agent, persistence, identity]
 
-# Content type: this package ships instructions and a skill.
 type: hybrid
 
 # Which agent platforms to deploy to (uncomment to pin; left open so any

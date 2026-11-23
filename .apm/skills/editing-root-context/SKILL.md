@@ -1,6 +1,6 @@
 ---
 name: editing-root-context
-description: Change a durable agent's own instructions, rules, or skills through APM, not by editing the generated files. Use before you change CLAUDE.md, AGENTS.md, .claude/rules/, .claude/skills/, .agents/skills/, .github/copilot-instructions.md, .github/instructions/, or anything under .apm/.
+description: Change a durable agent's own instructions, rules, or skills through APM, not by editing the generated files. Use before you change project-level skills, rules, or root context files (e.g., AGENTS.md).
 ---
 
 # Edit root context through APM
@@ -9,7 +9,7 @@ Your repository uses APM (Agent Package Manager). `apm.yml` is the source of tru
 
 ## Find the source of a file
 
-1. Read `apm.lock.yaml`. Each dependency lists its `deployed_files`. A file in that list belongs to that package. **Do not edit it.** Example: `.claude/rules/durable-agent.md` comes from `TobySullivan-AQI/durable-agents`.
+1. Read `apm.lock.yaml`. Each dependency lists its `deployed_files`. A file in that list belongs to that package. **Do not edit it.** Example: `.claude/rules/durable-agent.md` comes from the `durable-agents` repository on Github.
 2. A file deployed from the repository itself comes from `.apm/`:
    - `.claude/rules/<name>.md` and `.github/instructions/<name>.instructions.md` come from `.apm/instructions/<name>.instructions.md`.
    - `.claude/skills/<name>/` and `.agents/skills/<name>/` come from `.apm/skills/<name>/`.
@@ -30,7 +30,7 @@ If you can't find the source of a file, ask the user before you edit it.
    apm compile --clean  # regenerates compiled files; removes outputs that are no longer generated
    ```
    With the `claude` target, recent APM versions don't generate `CLAUDE.md` when the instructions are in `.claude/rules/`. `--clean` then removes a stale `CLAUDE.md`. This is expected.
-5. Check with `git status` that only the expected files changed. Commit the source files and the generated files together.
+5. Commit the source files and the generated files together.
 
 ## Change a package's instructions
 
